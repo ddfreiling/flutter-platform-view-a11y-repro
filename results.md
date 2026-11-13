@@ -46,3 +46,9 @@ The 3.50.0 build used a temporary copy of `app/` with the Android Gradle Plugin 
 - **`container_webview` has no web text even in the full dump.** A WebView only builds its accessibility tree once a service queries it; nothing reaches it through the dead link. This differs from the original observation in a larger app, where the full dump did contain the web text (that run may have had touch exploration or other services querying the WebView first; not verified).
 - **The workaround is reached as a single stop.** TalkBack focuses Flutter's own platform-view semantics node (focusable, bounds of the platform view) and reads the non-focusable `TextView`s under it as one group. A `WebView` root is entered and its paragraphs are visited one by one.
 - **Touch exploration did not reach the failing content.** A held touch injected at (300, 620), on "Native text 3", left TalkBack focus on the title in `container` HC/TLHC, `container_webview` HC and `textview` HC; in `workaround` HC the same touch focused the native text group. The original observation said touch exploration did reach WebView text; that case had a WebView whose own nodes are important. Raw output: `results/3.47.2-touch/`.
+
+## Manual TalkBack checks (3.47.2, by hand)
+
+- **Issue code sample** (`issue-sample/`, built with `flutter create bug`): swipe right from "Flutter button above" goes straight to "Flutter button below", and swipe left skips back the same way. Dragging a finger over the native text gives no speech, only short TalkBack sounds.
+- **`workaround / hc`**: the platform view is one TalkBack stop that reads the three texts together.
+- **TalkBack turned on after opening `workaround / hc`**: same as above. The stuck-before-the-platform-view state seen in a larger app did not reproduce here (only this variant was tried).
