@@ -2,7 +2,7 @@
 
 Minimal Flutter app showing that TalkBack swipe navigation skips an Android platform view whose root view is not important for accessibility under `IMPORTANT_FOR_ACCESSIBILITY_AUTO`, such as a plain `FrameLayout`, or a `TextView` (Flutter overwrites the `YES` a `TextView` gives itself).
 
-The cause is in the engine's `AccessibilityBridge`: it links the platform view into its virtual node tree with `result.addChild(embeddedView)` after setting the view to `IMPORTANT_FOR_ACCESSIBILITY_AUTO`. A service that only sees important views (TalkBack) gets no node for that root, so the whole subtree is missing. See [issue-draft.md](issue-draft.md) for the full report and [results.md](results.md) for the measurements.
+The cause is in the engine's `AccessibilityBridge`: it links the platform view into its virtual node tree with `result.addChild(embeddedView)` after setting the view to `IMPORTANT_FOR_ACCESSIBILITY_AUTO`. A service that only sees important views (TalkBack) gets no node for that root, so the whole subtree is missing. See [results.md](results.md) for the measurements.
 
 ## What the app shows
 
