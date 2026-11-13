@@ -1,0 +1,12 @@
+--------- beginning of main
+11-13 21:01:07.180 30606 30606 I PlatformViewsController: Hosting view in view hierarchy for platform view: 0
+11-13 21:01:07.181 30606 30606 I PlatformViewsController: PlatformView is using SurfaceProducer backend
+11-13 21:02:36.049 31372 31372 I PlatformViewsController: Using hybrid composition for platform view: 0
+11-13 21:04:04.745 32118 32118 I PlatformViewsController: Hosting view in view hierarchy for platform view: 0
+11-13 21:04:04.746 32118 32118 I PlatformViewsController: PlatformView is using SurfaceProducer backend
+11-13 21:05:38.713   599   599 I PlatformViewsController: Using hybrid composition for platform view: 0
+11-13 21:07:07.363  2006  2006 I PlatformViewsController: Hosting view in view hierarchy for platform view: 0
+11-13 21:07:07.364  2006  2006 I PlatformViewsController: PlatformView is using SurfaceProducer backend
+11-13 21:08:35.942  2969  2969 I PlatformViewsController: Using hybrid composition for platform view: 0
+11-13 21:10:05.345  5916  5916 I PlatformViewsController: Hosting view in view hierarchy for platform view: 0
+11-13 21:10:05.346  5916  5916 I PlatformViewsController: PlatformView is using SurfaceProducer backend

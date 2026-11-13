@@ -12,18 +12,21 @@ NATIVE = ('Native text', 'Native single text', 'Web text')
 
 
 def nodes(path):
+    """(own text, bounds, text of all descendants) per node."""
     out = []
     for n in ET.parse(path).iter('node'):
-        x0, y0, x1, y1 = map(int, re.findall(r'\d+', n.get('bounds')))
-        out.append((n.get('text') or n.get('content-desc') or '', (x0, y0, x1, y1), n.get('class')))
+        bounds = tuple(map(int, re.findall(r'\d+', n.get('bounds'))))
+        texts = [d.get('text') or d.get('content-desc') for d in n.iter('node')]
+        out.append((n.get('text') or n.get('content-desc') or '', bounds, ' + '.join(t for t in texts if t)))
     return out
 
 
 def label(full, rect):
-    cx, cy = (rect[0] + rect[2]) // 2, (rect[1] + rect[3]) // 2
-    hits = [(abs((b[2] - b[0]) * (b[3] - b[1])), t) for t, b, _ in full
-            if t and b[0] <= cx <= b[2] and b[1] <= cy <= b[3]]
-    return min(hits)[1] if hits else f'?{rect}'
+    """The node whose bounds best match the focus rectangle; a node without own text is a group."""
+    dist, text, group = min((sum(abs(a - b) for a, b in zip(r, rect)), t, g) for t, r, g in full)
+    if dist > 20:
+        return f'?{rect}'
+    return text or f'[{group}]'
 
 
 d = sys.argv[1]
@@ -39,4 +42,4 @@ for combo in sys.argv[2:]:
           f'compressed {len(comp)} nodes, native text {has(comp)}')
     print('  next:', ' > '.join(steps[:8]))
     print('  prev:', ' > '.join(steps[8:]))
-    print('  reached native text by swipe:', any(s.startswith(NATIVE) for s in steps))
+    print('  reached native text by swipe:', any(x in s for s in steps for x in NATIVE))

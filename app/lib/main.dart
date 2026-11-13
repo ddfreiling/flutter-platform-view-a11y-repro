@@ -76,7 +76,7 @@ class ReproPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(onPressed: () {}, child: const Text('Flutter button above')),
             const SizedBox(height: 16),
-            SizedBox(height: 600, child: _platformView()),
+            SizedBox(height: 250, child: _platformView()),
             const SizedBox(height: 16),
             ElevatedButton(onPressed: () {}, child: const Text('Flutter button below')),
             const SizedBox(height: 16),

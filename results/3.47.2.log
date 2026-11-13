@@ -1,0 +1,50 @@
+== container/hc
+== container/tlhc
+== textview/hc
+== textview/tlhc
+== webview/hc
+== webview/tlhc
+== container_webview/hc
+== container_webview/tlhc
+== workaround/hc
+== workaround/tlhc
+container/hc: full 19 nodes, native text True | compressed 11 nodes, native text False
+  next: Variant container, mode hc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant container, mode hc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant container, mode hc > Variant container, mode hc > Flutter text below > Flutter button below > Flutter button above > Variant container, mode hc > Variant container, mode hc
+  reached native text by swipe: False
+container/tlhc: full 19 nodes, native text True | compressed 11 nodes, native text False
+  next: Variant container, mode tlhc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant container, mode tlhc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant container, mode tlhc > Variant container, mode tlhc > Flutter text below > Flutter button below > Flutter button above > Variant container, mode tlhc > Variant container, mode tlhc
+  reached native text by swipe: False
+textview/hc: full 15 nodes, native text True | compressed 11 nodes, native text False
+  next: Variant textview, mode hc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant textview, mode hc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant textview, mode hc > Variant textview, mode hc > Flutter text below > Flutter button below > Flutter button above > Variant textview, mode hc > Variant textview, mode hc
+  reached native text by swipe: False
+textview/tlhc: full 15 nodes, native text True | compressed 11 nodes, native text False
+  next: Variant textview, mode tlhc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant textview, mode tlhc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant textview, mode tlhc > Variant textview, mode tlhc > Flutter text below > Flutter button below > Flutter button above > Variant textview, mode tlhc > Variant textview, mode tlhc
+  reached native text by swipe: False
+webview/hc: full 19 nodes, native text True | compressed 16 nodes, native text True
+  next: Variant webview, mode hc > Flutter button above > [Web text 1 + Web text 2 + Web text 3] > Web text 1 > Web text 2 > Web text 3 > Flutter button below > Flutter text below
+  prev: Flutter button below > Web text 3 > Web text 2 > Web text 1 > Flutter button above > Variant webview, mode hc > Variant webview, mode hc > Flutter text below
+  reached native text by swipe: True
+webview/tlhc: full 19 nodes, native text True | compressed 16 nodes, native text True
+  next: Variant webview, mode tlhc > Flutter button above > [Web text 1 + Web text 2 + Web text 3] > Web text 1 > Web text 2 > Web text 3 > Flutter button below > Flutter text below
+  prev: Flutter button below > Web text 3 > Web text 2 > Web text 1 > Flutter button above > Variant webview, mode tlhc > Variant webview, mode tlhc > Flutter text below
+  reached native text by swipe: True
+container_webview/hc: full 16 nodes, native text False | compressed 11 nodes, native text False
+  next: Variant container_webview, mode hc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant container_webview, mode hc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant container_webview, mode hc > Variant container_webview, mode hc > Flutter text below > Flutter button below > Flutter button above > Variant container_webview, mode hc > Variant container_webview, mode hc
+  reached native text by swipe: False
+container_webview/tlhc: full 16 nodes, native text False | compressed 11 nodes, native text False
+  next: Variant container_webview, mode tlhc > Flutter button above > Flutter button below > Flutter text below > Flutter text below > Variant container_webview, mode tlhc > Flutter button above > Flutter button below
+  prev: Flutter button above > Variant container_webview, mode tlhc > Variant container_webview, mode tlhc > Flutter text below > Flutter button below > Flutter button above > Variant container_webview, mode tlhc > Variant container_webview, mode tlhc
+  reached native text by swipe: False
+workaround/hc: full 19 nodes, native text True | compressed 15 nodes, native text True
+  next: Variant workaround, mode hc > Flutter button above > [Native text 1 + Native text 2 + Native text 3] > Flutter button below > Flutter text below > Flutter text below > Variant workaround, mode hc > Flutter button above
+  prev: Variant workaround, mode hc > Variant workaround, mode hc > Flutter text below > Flutter button below > [Native text 1 + Native text 2 + Native text 3] > Flutter button above > Variant workaround, mode hc > Variant workaround, mode hc
+  reached native text by swipe: True
+workaround/tlhc: full 19 nodes, native text True | compressed 15 nodes, native text True
+  next: Variant workaround, mode tlhc > Flutter button above > [Native text 1 + Native text 2 + Native text 3] > Flutter button below > Flutter text below > Flutter text below > Variant workaround, mode tlhc > Flutter button above
+  prev: Variant workaround, mode tlhc > Variant workaround, mode tlhc > Flutter text below > Flutter button below > [Native text 1 + Native text 2 + Native text 3] > Flutter button above > Variant workaround, mode tlhc > Variant workaround, mode tlhc
+  reached native text by swipe: True
